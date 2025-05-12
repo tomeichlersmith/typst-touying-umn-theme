@@ -17,7 +17,6 @@
     author: [Tom Eichlersmith],
     date: datetime.today(),
     institution: [he/him/his \ University of Minnesota],
-    logo: ldmx-logo()
   )
 )
 
@@ -93,7 +92,6 @@ A slide without a title but with *important* information.
 )
 
 == Footnote Example
-
 - #lorem(10)#footnote[#lorem(5)]
 - #lorem(10)
 
@@ -108,6 +106,8 @@ Just like this.
 #meanwhile
 
 Meanwhile, #pause we can also use `#meanwhile` to #pause display other content synchronously.
+
+= Performance
 
 == Typst is Much Faster #emoji.fire #emoji.rocket
 

@@ -2,7 +2,7 @@
 
 // Originally contributed by Pol Dellaiera - https://github.com/drupol
 
-#import "@preview/touying:0.5.5": *
+#import "@preview/touying:0.6.1": *
 
 #let umn-maroon = rgb(122,0,5)
 #let umn-lightgold = rgb(255,215,95)
@@ -133,12 +133,7 @@
     pad(
       top: 1em,
       bottom: 1em,
-      block(
-        width: 100%,
-        height: 100%,
-        //stroke: black,
-        body
-      )
+      body
     )
   }
   touying-slide(self: self, config: config, repeat: repeat, setting: new-setting, composer: composer, ..bodies)
@@ -404,7 +399,7 @@
         )
         //components.knob-marker(primary: self.colors.primary))
         show figure.caption: set text(size: 0.8em)
-        show footnote.entry: set text(size: 0.6em)
+        show footnote.entry: set text(size: 0.8em)
         show heading: set text(fill: umn-stormy, weight: "bold")
         show link: it => if type(it.dest) == str {
           text(fill: umn-sunny, underline(it))
