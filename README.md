@@ -6,7 +6,7 @@
 This theme is a slight simplification of the "university" theme shipped with Touying
 that uses the UMN colors by default.
 
-There are no versions and there is no package.
+There are no versions and there is no package (kinda).
 Clone this repository and then run the `just` recipes in order to install it.
 ```
 git clone https://github.com/tomeichlersmith/typst-touying-umn-theme.git
