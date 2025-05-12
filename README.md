@@ -7,5 +7,14 @@ This theme is a slight simplification of the "university" theme shipped with Tou
 that uses the UMN colors by default.
 
 There are no versions and there is no package.
-Copy the [umn-theme.typ](umn-theme.typ) file into your work area if you want to try using it.
+Clone this repository and then run the `just` recipes in order to install it.
+```
+git clone https://github.com/tomeichlersmith/typst-touying-umn-theme.git
+cd typst-touying-umn-theme
+just init-showman # only needed to be done once
+just install
+```
+The [justfile](justfile) holds the recipes so look there if you want to avoid installing `just.
 
+The [main.typ](main.typ) file is the testing ground I've used to play around with the theme,
+so you can look into it for examples on how to use it.

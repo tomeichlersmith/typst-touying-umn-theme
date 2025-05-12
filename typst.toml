@@ -1,0 +1,14 @@
+[package]
+name = "umn-theme"
+version = "0.0.0"
+compiler = "0.13.1"
+entrypoint = "lib.typ"
+repository = "https://github.com/tomeichlersmith/typst-touying-umn-theme"
+authors = ["Tom Eichlersmith <@tomeichlersmith>"]
+license = "GPL3"
+description = "Touying slide theme for UMN"
+keywords = ["slides", "touying-theme"]
+categories = ["fun", "layout"]
+
+[tool.packager]
+paths = ["lib.typ", "LICENSE", "README.md"]
