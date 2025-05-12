@@ -11,6 +11,10 @@
 #let umn-sunny = rgb(0,149,182)
 #let umn-lightgray = rgb(213,214,210)
 
+#let ldmx-logo() = {
+  image("ldmx_logo.svg")
+}
+
 #let _tblock(self: none, title: none, it) = {
   grid(
     columns: 1,
@@ -22,13 +26,11 @@
       inset: (top: 0.4em, bottom: 0.3em, left: 0.5em, right: 0.5em),
       text(fill: self.colors.neutral-lightest, weight: "bold", title),
     ),
-
     rect(
       fill: self.colors.primary,
       width: 100%,
       height: 1pt,
     ),
-
     block(
       fill: self.colors.tertiary,
       width: 100%,

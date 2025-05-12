@@ -17,7 +17,7 @@
     author: [Tom Eichlersmith],
     date: datetime.today(),
     institution: [he/him/his \ University of Minnesota],
-    logo: image("ldmx_logo.svg")
+    logo: ldmx-logo()
   )
 )
 
