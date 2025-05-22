@@ -5,8 +5,8 @@
 #show: codly-init
 
 #show: checklist.with(
-  stroke: umn-lightgray,
-  fill: umn-maroon,
+  fill: umn-lightgray,
+  stroke: umn-maroon,
   radius: 0.2em
 )
 
