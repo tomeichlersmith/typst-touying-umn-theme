@@ -86,6 +86,7 @@
       columns: (1fr, auto),
       align: left,
       fill: self.colors.primary,
+      stroke: self.colors.primary,
       inset: 10pt,
       text(
         fill: self.colors.secondary,
