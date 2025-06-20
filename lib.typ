@@ -11,6 +11,23 @@
 #let umn-sunny = rgb(0,149,182)
 #let umn-lightgray = rgb(213,214,210)
 
+/// include checklists with umn colors
+/// 
+/// import the cheq typst package (see it for documentation)
+/// and then we call its show rule with our colors
+///
+/// any args are given to the checklist show rule.
+#let checklist(..args, body) = {
+  import "@preview/cheq:0.2.2": checklist
+  show: checklist.with(
+    stroke: umn-maroon,
+    fill: umn-lightgray,
+    radius: 0.2em,
+    ..args
+  )
+  body
+}
+
 /// construct a progress bar in umn colors
 ///
 /// The completed portion is maroon, the uncompleted portion
