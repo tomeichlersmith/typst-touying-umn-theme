@@ -93,7 +93,7 @@
         size: 1.5em,
         utils.call-or-display(self, self.store.header)
       ),
-      grid.cell(inset: 0pt, self.info.logo)
+      grid.cell(inset: 0pt, align: horizon, self.info.logo)
     )
   }
   let footer(self) = {
