@@ -11,6 +11,46 @@
 #let umn-sunny = rgb(0,149,182)
 #let umn-lightgray = rgb(213,214,210)
 
+/// construct a progress bar in umn colors
+///
+/// The completed portion is maroon, the uncompleted portion
+/// is lightgray, and the fraction is written on the right side
+/// in sunny.
+///
+/// n: numerator count
+/// d: denominator count
+/// width: (length) how wide the total bar should be, default 80%
+/// height: (length) how tall, default 1em
+#let progress-bar(
+  n, d,
+  width: 80%,
+  height: 1em
+) = {
+  let ratio = n/d
+  block[
+    #stack(
+      dir: ltr,
+      rect(
+        stroke: none,
+        fill: umn-maroon,
+        radius: (left: 100%),
+        height: height, width: ratio * width
+      ),
+      rect(
+        stroke: none,
+        fill: umn-lightgray, 
+        radius: (right: 100%),
+        height: height, width: (1 - ratio) * width,
+      )
+    )
+    #place(
+      dx: -0.2em,
+      horizon+right,
+      align(right+horizon, text(fill: umn-sunny)[#n / #d])
+    )
+  ]
+}
+
 #let ldmx-logo() = {
   image("ldmx_logo.svg")
 }
