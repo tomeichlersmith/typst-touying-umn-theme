@@ -1,14 +1,9 @@
 #import "@local/umn-theme:0.0.0": *
 #import "@preview/codly:1.3.0": *
-#import "@preview/cheq:0.2.2": checklist
 
 #show: codly-init
 
-#show: checklist.with(
-  fill: umn-lightgray,
-  stroke: umn-maroon,
-  radius: 0.2em
-)
+#show: checklist
 
 #show: umn-theme.with(
   config-info(
@@ -60,6 +55,10 @@ A slide without a title but with *important* information.
 == Just Text
 
 #lorem(20)
+
+#progress-bar(3,100)
+#progress-bar(52,100)
+#progress-bar(98,100)
 
 === Internal Heading
 
