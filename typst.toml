@@ -11,4 +11,4 @@ keywords = ["slides", "touying-theme"]
 categories = ["fun", "layout"]
 
 [tool.packager]
-paths = ["lib.typ", "ldmx_logo.svg", "LICENSE", "README.md"]
+paths = ["lib.typ", "ldmx-logo.svg", "cms-logo.png", "LICENSE", "README.md"]

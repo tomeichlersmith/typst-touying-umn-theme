@@ -69,7 +69,11 @@
 }
 
 #let ldmx-logo() = {
-  image("ldmx_logo.svg")
+  image("ldmx-logo.svg")
+}
+
+#let cms-logo() = {
+  image("cms-logo.png")
 }
 
 #let _tblock(self: none, title: none, it) = {
