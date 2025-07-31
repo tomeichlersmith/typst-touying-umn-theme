@@ -34,39 +34,62 @@
 /// is lightgray, and the fraction is written on the right side
 /// in sunny.
 ///
-/// n: numerator count
-/// d: denominator count
+/// n: (int|array|function)
+/// - if int, then treated as number of item done added at left
+/// - if array, then treated as indices to be treated as done
+/// - if function, given indices to check if done (true) or not (false)
+/// total: (int) total number of items with progress
 /// width: (length) how wide the total bar should be, default 80%
 /// height: (length) how tall, default 1em
 #let progress-bar(
-  n, d,
+  n,
+  total,
   width: 80%,
-  height: 1em
+  height: 1em,
+  radius: 20pt,
 ) = {
-  let ratio = n/d
+  let rect-width = 1/total*width;
+  let done-checker = if type(n) == int {
+    (i) => (i < n);
+  } else if type(n) == array {
+    (i) => (i in n)
+  } else {
+    n
+  }
+  let total-done = range(total).filter(done-checker).len()
   block[
     #stack(
       dir: ltr,
-      rect(
-        stroke: none,
-        fill: umn-maroon,
-        radius: (left: 100%),
-        height: height, width: ratio * width
-      ),
-      rect(
-        stroke: none,
-        fill: umn-lightgray, 
-        radius: (right: 100%),
-        height: height, width: (1 - ratio) * width,
-      )
+      ..range(total).map(i => {
+          let radius = if i == 0 {
+            (left: radius)
+          } else if i == total - 1 {
+            (right: radius)
+          } else {
+            (:)
+          }
+          let fill = if done-checker(i) {
+            umn-maroon
+          } else {
+            umn-lightgray
+          }
+          rect(
+            stroke: fill,
+            fill: fill,
+            radius: radius,
+            height: height,
+            width: rect-width 
+          )
+      })
     )
     #place(
       dx: -0.2em,
       horizon+right,
-      align(right+horizon, text(fill: umn-sunny)[#n / #d])
+      align(right+horizon, text(fill: umn-sunny)[#total-done / #total])
     )
   ]
 }
+
 
 #let ldmx-logo() = {
   image("ldmx-logo.svg")
